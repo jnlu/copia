@@ -10,7 +10,7 @@ And the recipient format is:
 
 ```FirstName,LastName,Street,City,State,Postal,Country,Email,Phone,Latitude,Longitude,Restrictions,Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday```
 
-The parser generates a CSV file for each customer, which has a list of potential recipients. The output file follows the same format as the recipient file.
+The parser generates a CSV file for each customer, which has a list of potential recipients. The output file follows the same format as the recipient file with two additional columns, popularity and distance.
 
 ---
 
@@ -20,7 +20,7 @@ The parser generates a CSV file for each customer, which has a list of potential
 
 ### main
 
-Calls the Parser and Match classes to parse the CSV files and match recipients and customers Prints multiple CSV files, one for each customer, that list compatibile recipients. There may be zero to mulitple potential recipients for each customer. If there are multiple, the recipients are listed in order of overall popularity (how many customers they can match with) then on distance (how far thehy are from the customer).
+Calls the Parser, Match, and Printer classes to parse the CSV files,  match recipients and customers, then write the CSV files.
 
 This method requires two arguments. The first is the pathname to the folder where Customers.csv and Recipients.csv are located. The second is the pathname to the folder where the output CSV files are to be written.
 
@@ -47,7 +47,6 @@ Takes in four values representing the latitude and longitude of the customer and
 ## checkTime:
 
 Takes in a string representing when the customer's food is first available for pickup and a list of strings representing the recipient's information. Determines the day of the week the customer is donating the food, then finds the corresponding schedule availability for the recipient. Returns true if the recipient is available during that time, and false otherwise.
-
 
 ## Matcher
 
