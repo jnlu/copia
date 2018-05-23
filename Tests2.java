@@ -10,7 +10,7 @@ import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 
-class Tests {
+class Tests2 {
 
 	@Test
 	private void testDistanceBase() {
