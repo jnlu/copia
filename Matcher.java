@@ -12,14 +12,14 @@ public class Matcher {
 		// c_matches will keep a list of the customers each recipient is compatible with and their distance from the customer
 		HashMap<String, ArrayList<Map.Entry<String, Double>>> c_matches = new HashMap<String, ArrayList<Map.Entry<String, Double>>>();
 		
-		int r_size = recipients.size();
-		int c_size = customers.size();
-		for (int i = 0; i < r_size; i++) {
+		int rSize = recipients.size();
+		int cSize = customers.size();
+		for (int i = 0; i < rSize; i++) {
 			
 			String[] r = recipients.get(i);
-			String r_key = String.join(",", r);
-			r_pop.put(String.join(",", r_key), 0);
-			for (int j = 0; j < c_size; j++) {
+			String rKey = String.join(",", r);
+			r_pop.put(String.join(",", rKey), 0);
+			for (int j = 0; j < cSize; j++) {
 				String[] c = customers.get(j);
 				String c_key = String.join(",", c);
 				if (i == 0) {
@@ -31,8 +31,8 @@ public class Matcher {
 				if (comp >= 0) {
 					// If they're compatible, the recipient's information and the distance is added to the customer's list
 					// Also increments the recipient's popularity count
-					java.util.Map.Entry<String,Double> tup = new java.util.AbstractMap.SimpleEntry<>(r_key,comp);
-					r_pop.put(r_key, r_pop.get(r_key) + 1);
+					java.util.Map.Entry<String,Double> tup = new java.util.AbstractMap.SimpleEntry<>(rKey,comp);
+					r_pop.put(rKey, r_pop.get(rKey) + 1);
 					c_matches.get(c_key).add(tup);
 				}
 			}

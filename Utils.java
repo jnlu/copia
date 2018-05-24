@@ -37,10 +37,10 @@ public class Utils {
 		// Converts both values to binary strings, then checks if their values
 		// at any position are both 1. Returns false if there's a match, true otherwise
 
-		String c_cat = String.format("%06d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(c))));
-		String r_cat = String.format("%06d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(r))));
+		String ccat = String.format("%06d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(c))));
+		String rcat = String.format("%06d", Integer.parseInt(Integer.toBinaryString(Integer.parseInt(r))));
 		for (int i = 0; i < 6; i++) {
-			if ((c_cat.charAt(i) == '1') && (r_cat.charAt(i) == '1')) {
+			if ((ccat.charAt(i) == '1') && (rcat.charAt(i) == '1')) {
 				return false;
 			}
 		}
@@ -49,16 +49,16 @@ public class Utils {
 	
 	public static double checkDistance(String clat, String clon, String rlat, String rlon) {
 		
-		// Uses the Haversine formula to calculate the distance between two points using their latitudes and longitudes
+		// Uses the haversine formula to calculate the distance between two points using their latitudes and longitudes
 		// https://en.wikipedia.org/wiki/Haversine_formula
 		
-		double c_lat = Double.parseDouble(clat) * Math.PI / 180;
-		double c_lon = Double.parseDouble(clon)* Math.PI / 180;
+		double cLat = Double.parseDouble(clat) * Math.PI / 180;
+		double cLon = Double.parseDouble(clon)* Math.PI / 180;
 		
-		double r_lat = Double.parseDouble(rlat) * Math.PI / 180;
-		double r_lon = Double.parseDouble(rlon) * Math.PI / 180;
+		double rLat = Double.parseDouble(rlat) * Math.PI / 180;
+		double rLon = Double.parseDouble(rlon) * Math.PI / 180;
 		
-		double a = Math.pow(Math.sin((r_lat - c_lat) / 2), 2) + (Math.cos(c_lat) * Math.cos(r_lat) * Math.pow((Math.sin((r_lon - c_lon) / 2)), 2));
+		double a = Math.pow(Math.sin((rLat - cLat) / 2), 2) + (Math.cos(cLat) * Math.cos(rLat) * Math.pow((Math.sin((rLon - cLon) / 2)), 2));
 		double distance = 2 * 3961 * Math.asin(Math.sqrt(a));
 		
 		return distance;
