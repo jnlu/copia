@@ -40,11 +40,11 @@ Takes in two lists of strings corresponding to a customer and a recipient, then 
 
 Takes in two strings of integers corresponding to the categories of food the customer is donating and the categories of food the recipient cannot accept. Returns true if these two values are compatibile, i.e. the customer is donating food that the recipient can accept. Returns false otherwise.
 
-## checkDistance:
+## checkDistance
 
 Takes in four values representing the latitude and longitude of the customer and the recipient. Uses the haversine formula to compute the distance between them in miles. Returns that distance.
 
-## checkTime:
+## checkTime
 
 Takes in a string representing when the customer's food is first available for pickup and a list of strings representing the recipient's information. Determines the day of the week the customer is donating the food, then finds the corresponding schedule availability for the recipient. Returns true if the recipient is available during that time, and false otherwise.
 
