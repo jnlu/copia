@@ -14,6 +14,12 @@ The parser generates a CSV file for each customer, which has a list of potential
 
 ---
 
+# Running
+
+Run CopiaMaster. It requires two arguments. The first is the path to the folder containing your Customers.csv and Recipients.csv files. The second is the path to the folder where you would like the output CSV files to be written.
+
+---
+
 # Methods
 
 ## CopiaMatcher
